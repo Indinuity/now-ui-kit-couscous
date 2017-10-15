@@ -1,0 +1,39 @@
+{
+  "name": "now-ui-kit-couscous",
+  "version": "1.0.0",
+  "description": "Now UI Kit for Couscous",
+  "main": "couscous.js",
+  "scripts": {
+    "build": "gulp --gulpfile=couscous.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Indinuity/now-ui-kit-couscous.git"
+  },
+  "author": "Indinuity <github@indinuity.com> (https://www.indinuity.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Indinuity/now-ui-kit-couscous/issues"
+  },
+  "homepage": "https://github.com/Indinuity/now-ui-kit-couscous#readme",
+  "devDependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-less": "^3.1.0",
+    "gulp-open": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^2.0.1",
+    "jquery": "^3.2.1",
+    "merge-stream": "^1.0.0",
+    "now-ui-kit": "git+https://github.com/Indinuity/now-ui-kit.git#fixes",
+    "popper.js": "^1.12.5"
+  }
+}

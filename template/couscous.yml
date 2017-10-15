@@ -1,0 +1,27 @@
+directory: .
+
+template:
+    github:
+        user: indinuity
+        repo: now-ui-kit-couscous
+
+    title: Now-UI-Kit Couscous Template
+    subTitle: An Example Template by Indinuity.
+
+    # The left menu bar
+    menu:
+        sections:
+            main:
+                name: Main Documentation
+                items:
+                    home:
+                        text: Home
+                        # You can use relative urls
+                        relativeUrl: doc/faq.html
+                    foo:
+                        text: Another link
+                        # Or absolute urls
+                        absoluteUrl: https://example.com
+            other:
+                name: Other topics
+                items:
