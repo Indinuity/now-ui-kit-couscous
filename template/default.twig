@@ -39,9 +39,9 @@
     </nav>
     
     <div class="container-fluid">
-        <div class="row flex-xl-nowrap">
-            <div class="col-12 col-md-3 col-xl-2">
-                <nav class="nav flex-column">
+        <div class="row flex-xl-nowrap room">
+            <div class="col-12 col-md-3 col-xl-2 drawer reveal">
+                <nav class="nav flex-column menu">
 
                 {% for sectionId, section in menu.sections %}
                 <div class="nav-item {{ sectionId == currentSection ? 'active' }}">
@@ -67,7 +67,7 @@
                 {#}
                 </nav>
             </div>
-            <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5" role="main">
+            <main class="col-12 col-md-9 col-xl-10 content" role="main">
                 {{ content|raw }}
             </main>
         </div>

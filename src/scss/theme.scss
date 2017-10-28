@@ -3,3 +3,9 @@
 @import '../../node_modules/now-ui-kit/assets/sass/now-ui-kit.scss';
 
 @import './_sidebar.scss';
+
+main {
+    img {
+        background-color: theme-color("primary");
+    }
+}
