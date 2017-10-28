@@ -4,7 +4,7 @@
   "description": "Now UI Kit for Couscous",
   "main": "couscous.js",
   "scripts": {
-    "build": "gulp --gulpfile=couscous.js"
+    "build": "./node_modules/.bin/gulp --gulpfile=couscous.js"
   },
   "repository": {
     "type": "git",

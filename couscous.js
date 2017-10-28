@@ -33,7 +33,6 @@ var Paths = {
   ],
   // third party js
   JS                   : [
-      // './node_modules/blueimp-file-upload/js/jquery.fileupload-validate.js',
     './node_modules/jquery/dist/jquery.min.js'        
   ],
   // our js

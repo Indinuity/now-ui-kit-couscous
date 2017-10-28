@@ -18,11 +18,11 @@ template:
     baseUrl: http://mnapoli.github.io/Couscous
 
     github:
-        user: hello
-        repo: my-project
+        user: indinuity
+        repo: now-ui-kit-couscous
 
-    title: My project
-    subTitle: This is a great project.
+    title: Now-UI-Kit Couscous Template
+    subTitle: An Example Template by Indinuity.
 
     # The left menu bar
     menu:
@@ -41,6 +41,7 @@ template:
             other:
                 name: Other topics
                 items:
+
 ```
 
 Note that the menu items can also contain HTML:
