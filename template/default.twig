@@ -49,12 +49,12 @@
                     {{ section.name|raw }}
                     
                     {% if section.items|length > 0 %}
-                    <span class="now-ui-icons arrows-1_minimal-up float-right"></span>
+                    <span class="now-ui-icons {{ sectionId == currentSection ? 'arrows-1_minimal-down' : 'arrows-1_minimal-up' }} float-right"></span>
                     {% endif %}
                     </a>
 
                     {% if section.items|length > 0 %}
-                    <ul class="nav flex-column">
+                    <ul class="nav flex-column" {{ sectionId == currentSection ? 'style="display: block;"' }}>
                         {% for itemId, item in section.items %}
                         <li class="nav-item">
                             <a class="nav-link {{ itemId == currentMenu and sectionId == currentSection ? 'active' }}" href="{{ item.absoluteUrl|default(baseUrl ~ item.relativeUrl) }}">
