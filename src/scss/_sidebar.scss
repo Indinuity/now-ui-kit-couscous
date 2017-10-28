@@ -1,7 +1,7 @@
 
 nav.menu {
 
-  color: theme-color("primary");
+  color: $brand-primary;
   border-right: 1px solid darken($body-bg, 5%);
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
     
@@ -14,7 +14,7 @@ nav.menu {
         display: block;
         background: $body-bg;
         padding: 10px 15px;
-        color: theme-color("primary");
+        color: $brand-primary;
         text-decoration: none;
         -webkit-transition: 0.2s linear;
            -moz-transition: 0.2s linear;
@@ -22,7 +22,7 @@ nav.menu {
              -o-transition: 0.2s linear;
                 transition: 0.2s linear;
         &:hover {
-          background: theme-color("primary");
+          background: $brand-primary;
           color: $body-bg;
         }
         & .fa {
@@ -32,8 +32,8 @@ nav.menu {
         }
         & .badge {
           display: inline-block;
-          background: theme-color("primary"); /* IE Fallback */
-          background: rgba(red(theme-color("primary")),green(theme-color("primary")),blue(theme-color("primary")),.2);
+          background: $brand-primary; /* IE Fallback */
+          background: rgba(red($brand-primary),green($brand-primary),blue($brand-primary),.2);
           padding: 3px 7px;
           color: $body-bg;
           font-size: 12px;
@@ -45,12 +45,12 @@ nav.menu {
         display: none;
         & li {
           & a {
-            color: theme-color("primary");
+            color: $brand-primary;
             background: darken($body-bg, 2%);
             border-left: 4px solid transparent;
             padding: 10px 20px;
             &:hover {
-              background: lighten(theme-color("primary"), 1%);
+              background: lighten($brand-primary, 1%);
               border-left: 4px solid $body-bg;
             }
           }
@@ -72,8 +72,8 @@ nav.menu {
         background: $body-bg;
         position: fixed;
         height: auto; 
-        top: 0;
-        bottom: 0;
+        // top: 0;
+        // bottom: 0;
         overflow-y: auto;
         z-index: 1000;
         transition: all 0.2s ease-in;
@@ -130,7 +130,7 @@ nav.menu {
               color: $body-bg;
               
               &:hover {
-                color: lighten(theme-color("primary"), 15%);
+                color: lighten($brand-primary, 15%);
               }
             }
         }
