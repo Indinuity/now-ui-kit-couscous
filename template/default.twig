@@ -66,25 +66,23 @@
                 {#}
                 </nav>
             </div>
-            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5" role="main">
+            <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5" role="main">
                 {{ content|raw }}
             </main>
         </div>
     </div>
 
     <script src="{{ baseUrl }}js/theme.min.js"></script>
-    {#}
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<script src="http://yandex.st/highlightjs/7.5/highlight.min.js"></script>
-
-	<script>
+    
+    <script>
         $(function () {
-            $("section>h1").wrap('<div class="page-header" />');
-            $("section>p:first-child").addClass('lead');
             hljs.initHighlightingOnLoad();
         });
     </script>
+    
+    {#}
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     {#}
 </body>
 </html>

@@ -29,11 +29,12 @@ var Paths = {
   SCSS_TOOLKIT_SOURCES : './src/scss/'+Settings.TOOLKIT+'*',
   LESS                 : './src/scss/**/**',
   CSS				   : [	
-
+    './node_modules/highlight.js/styles/tomorrow-night.css',
   ],
   // third party js
   JS                   : [
-    './node_modules/jquery/dist/jquery.min.js'        
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/highlight.js/lib/highlight.js',        
   ],
   // our js
   JS_APP				: [
