@@ -41,7 +41,7 @@ nav.menu {
         display: none;
         & li {
           & a {
-            color: $body-bg;
+            color: darken($brand-primary, 1%);
             background: lighten($brand-primary, 35%);
             border-left: 4px solid transparent;
             padding: 10px 20px;
