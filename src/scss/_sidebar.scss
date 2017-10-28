@@ -41,8 +41,8 @@ nav.menu {
         display: none;
         & li {
           & a {
-            color: $brand-primary;
-            background: darken($body-bg, 2%);
+            color: $body-bg;
+            background: lighten($brand-primary, 20%);
             border-left: 4px solid transparent;
             padding: 10px 20px;
             &:hover {
