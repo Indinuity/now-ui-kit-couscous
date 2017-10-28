@@ -29,7 +29,7 @@ var Paths = {
   SCSS_TOOLKIT_SOURCES : './src/scss/'+Settings.TOOLKIT+'*',
   LESS                 : './src/scss/**/**',
   CSS				   : [	
-    './node_modules/highlight.js/styles/tomorrow-night.css',
+    './node_modules/highlight.js/styles/solarized-dark.css',
   ],
   // third party js
   JS                   : [
