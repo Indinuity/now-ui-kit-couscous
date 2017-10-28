@@ -17,7 +17,7 @@
   })
   .on('click', '.drawer-toggle', function(e) {
     e.preventDefault();
-    $(this).closest('.room').toggleClass("active");
+    $($(this).attr('data-target')).toggleClass("active");
   });
-  
+
 })(jQuery);

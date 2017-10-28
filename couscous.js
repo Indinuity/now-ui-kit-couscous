@@ -33,6 +33,7 @@ var Paths = {
   // third party js
   JS                   : [
     './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/bootstrap/dist/collapse.js',
   ],
   // our js
   JS_APP				: [
