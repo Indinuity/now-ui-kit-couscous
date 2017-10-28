@@ -37,40 +37,40 @@
         </div>
     </nav>
     
-	<main>
-	<div class="container-fluid">
-		<div class="row">
+    <div class="container-fluid">
+        <div class="row flex-xl-nowrap">
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+                <nav id="bd-docs-nav" class="collapse bd-links">
 
-			<nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+                {% for section in menu.sections %}
+                <div class="bd-toc-item {{ section == currentSection ? 'active' }}">
+                    <a class="bd-toc-link">
+                    {{ section.name }}
+                    </a>
 
-				{% for section in menu.sections %}
-				<p class="text-muted">
-					{{ section.name }}
-				</p>
-
-				<ul class="nav nav-pills nav-stacked">
-					{% for itemId, item in section.items %}
-					<li class="{{ itemId == currentMenu ? 'active' }}"><a
-						href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
-							{{ item.text|raw }}
-					</a></li>
-					{% endfor %}
-				</ul>
-				{% endfor %}
-				{#} 
-				<p> 
-				  <iframe class="github-star" src="http://ghbtns.com/github-btn.html?user={{ github.user}}&repo={{ github.repo }}&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe> 
-			    </p> 
-			    {#}
-			</nav>
-
-			<section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-				{{ content|raw }}
-			</section>
-
-		</div>
-	</div>
-	</main>
+                    <ul class="nav bd-sidenav">
+                        {% for itemId, item in section.items %}
+                        <li class="{{ itemId == currentMenu ? 'active bd-sidenav-active' }}">
+                            <a href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
+                            {{ item.text|raw }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+                {#} 
+                <p> 
+                  <iframe class="github-star" src="http://ghbtns.com/github-btn.html?user={{ github.user}}&repo={{ github.repo }}&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe> 
+                </p> 
+                {#}
+                </nav>
+            </div>
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+                {{ content|raw }}
+            </main>
+        </div>
+    </div>
 
     <script src="{{ baseUrl }}js/theme.min.js"></script>
     {#}
