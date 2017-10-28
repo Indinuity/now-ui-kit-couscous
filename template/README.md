@@ -16,7 +16,7 @@ Here are all the variables you can set in your `couscous.yml`:
 template:
     # Base URL of the published website
     baseUrl: http://mnapoli.github.io/Couscous
-
+ 
     github:
         user: indinuity
         repo: now-ui-kit-couscous
@@ -54,11 +54,11 @@ home:
 
 ## Menu
 
-To set the current menu item (i.e. highlighted menu item), set the `currentMenu`
-key in the Markdown files:
+To set the current menu item (i.e. highlighted menu item), set the `currentMenu` and `currentSection` keys in the Markdown files:
 
 ```markdown
 ---
+currentSection: main
 currentMenu: home
 ---
 

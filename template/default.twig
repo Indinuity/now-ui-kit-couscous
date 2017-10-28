@@ -6,7 +6,7 @@
 
     <title>{{ title }}</title>
 
-    <link rel="stylesheet" href="{{ baseUrl }}css/theme.min.css">
+    <link rel="stylesheet" href="{{ baseUrl }}css/theme.min.css?_={{ assetVersion }}">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -42,8 +42,8 @@
             <div class="col-12 col-md-3 col-xl-2">
                 <nav class="nav flex-column">
 
-                {% for section in menu.sections %}
-                <div class="nav-item {{ section == currentSection ? 'active' }}">
+                {% for sectionId, section in menu.sections %}
+                <div class="nav-item {{ sectionId == currentSection ? 'active' }}">
                     <a class="nav-link">
                     {{ section.name|raw }}
                     </a>
@@ -51,7 +51,7 @@
                     <ul class="nav flex-column">
                         {% for itemId, item in section.items %}
                         <li class="nav-item">
-                            <a class="nav-link {{ itemId == currentMenu ? 'active' }}" href="{{ item.absoluteUrl|default(baseUrl ~ item.relativeUrl) }}">
+                            <a class="nav-link {{ itemId == currentMenu and sectionId == currentSection ? 'active' }}" href="{{ item.absoluteUrl|default(baseUrl ~ item.relativeUrl) }}">
                             {{ item.text|raw }}
                             </a>
                         </li>
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <script src="{{ baseUrl }}js/theme.min.js"></script>
+    <script src="{{ baseUrl }}js/theme.min.js?_={{ assetVersion }}"></script>
     
     <script>
         $(function () {

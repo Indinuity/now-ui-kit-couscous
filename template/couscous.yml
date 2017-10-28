@@ -1,6 +1,8 @@
 directory: .
 
 template:
+    assetVersion: 20171028001
+    
     github:
         user: indinuity
         repo: now-ui-kit-couscous
