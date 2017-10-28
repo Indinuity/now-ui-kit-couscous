@@ -5,11 +5,7 @@ nav.menu {
   border-right: 1px solid darken($body-bg, 5%);
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
     
-  & ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    & li {
+    & .nav-item {
       & a {
         display: block;
         background: $body-bg;
@@ -56,7 +52,6 @@ nav.menu {
           }
         }
       }
-    }
   }
 }
 
