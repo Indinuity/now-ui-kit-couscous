@@ -42,7 +42,7 @@ nav.menu {
         & li {
           & a {
             color: $body-bg;
-            background: lighten($brand-primary, 20%);
+            background: lighten($brand-primary, 35%);
             border-left: 4px solid transparent;
             padding: 10px 20px;
             &:hover {
