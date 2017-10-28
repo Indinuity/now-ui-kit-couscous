@@ -47,8 +47,13 @@
                 <div class="nav-item {{ sectionId == currentSection ? 'active' }}">
                     <a class="nav-link">
                     {{ section.name|raw }}
+                    
+                    {% if section.items|length > 0 %}
+                    <span class="now-ui-icons arrows-1_minimal-up float-right"></span>
+                    {% endif %}
                     </a>
 
+                    {% if section.items|length > 0 %}
                     <ul class="nav flex-column">
                         {% for itemId, item in section.items %}
                         <li class="nav-item">
@@ -58,6 +63,7 @@
                         </li>
                         {% endfor %}
                     </ul>
+                    {% endif %}
                 </div>
                 {% endfor %}
                 {#} 
