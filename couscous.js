@@ -1,6 +1,5 @@
 var gulp         = require('gulp')
 var path         = require('path')
-var less         = require('gulp-less')
 var sass         = require('gulp-sass')
 var autoprefixer = require('gulp-autoprefixer')
 var sourcemaps   = require('gulp-sourcemaps')
@@ -27,7 +26,6 @@ var Paths = {
   DIST                 : 'dist',
   DIST_TOOLKIT_JS      : 'dist/'+Settings.TOOLKIT+'.js',
   SCSS_TOOLKIT_SOURCES : './src/scss/'+Settings.TOOLKIT+'*',
-  LESS                 : './src/scss/**/**',
   CSS				   : [	
   ],
   // third party js
@@ -44,7 +42,7 @@ var Paths = {
 gulp.task('default', ['css-min', 'js-min', 'fonts'])
 
 gulp.task('watch', function () {
-  gulp.watch(Paths.LESS, ['less-min']);
+  gulp.watch(Paths.SCSS_TOOLKIT_SOURCES, ['css-min']);
   gulp.watch(Paths.JS,   ['js-min']);
 });
 

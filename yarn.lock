@@ -2114,7 +2114,7 @@ normalize-range@^0.1.2:
 
 "now-ui-kit@git+https://github.com/Indinuity/now-ui-kit.git#fixes":
   version "1.0.1"
-  resolved "git+https://github.com/Indinuity/now-ui-kit.git#90fea9cc83a4a3654ec1bb6acb672fc5d16b0a3f"
+  resolved "git+https://github.com/Indinuity/now-ui-kit.git#057d88c7d807d7ffe9561345aba60c55a4e16f0f"
 
 "npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0:
   version "4.1.2"
