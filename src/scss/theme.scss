@@ -76,13 +76,11 @@
 
 @import "../../node_modules/now-ui-kit/assets/scss/now-ui-kit/responsive";
 
-// custom components and styles
+// custom components
 @import './_sidebar.scss';
 
-main {
-    img {
-        background-color: $brand-primary;
-        border: 1px solid #ccc;
-        padding: 0.5rem;
-    }
+// custom styles
+img {
+    background-color: lighten($brand-primary, 15%);
+    padding: 0.5rem;
 }
