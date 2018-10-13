@@ -80,6 +80,14 @@
 @import './_sidebar.scss';
 
 // custom styles
+h2 {
+  color: $primary-color;
+}
+
+h3 {
+  border-bottom: 0.1rem solid #ccc; 
+}
+
 img {
     background-color: lighten($brand-primary, 15%);
     padding: 0.1rem;
