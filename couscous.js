@@ -31,8 +31,7 @@ var Paths = {
   // third party js
   JS                   : [
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-    './node_modules/ekko-lightbox/dist/ekko-lightbox.js'
+    './node_modules/bootstrap/js/dist/collapse.js',
   ],
   // our js
   JS_APP				: [
