@@ -97,6 +97,10 @@ p {
   font-size: $font-paragraph;
 }
 
+li {
+  font-size: $font-paragraph;
+}
+
 @include media-breakpoint-up(md) {
   p {
     &.img-wrap {
