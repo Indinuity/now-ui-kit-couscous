@@ -89,8 +89,12 @@ h3 {
 }
 
 img {
-    background-color: lighten($brand-primary, 15%);
-    padding: 0.1rem;
+  background-color: lighten($brand-primary, 15%);
+  padding: 0.1rem;
+}
+
+p {
+  font-size: $font-paragraph;
 }
 
 @include media-breakpoint-up(md) {
