@@ -99,6 +99,7 @@ p {
 
 li {
   font-size: $font-paragraph;
+  padding: 0.25rem 0;
 }
 
 @include media-breakpoint-up(md) {
