@@ -4,7 +4,7 @@
   "description": "Now UI Kit for Couscous",
   "main": "couscous.js",
   "scripts": {
-    "build": "./node_modules/.bin/gulp --gulpfile=couscous.js"
+    "build": "./node_modules/gulp/bin/gulp.js --gulpfile=couscous.js"
   },
   "repository": {
     "type": "git",
@@ -36,5 +36,8 @@
     "merge-stream": "^1.0.0",
     "now-ui-kit": "git+https://github.com/Indinuity/now-ui-kit.git#fixes",
     "popper.js": "^1.12.5"
+  },
+  "dependencies": {
+    "ekko-lightbox": "^5.3.0"
   }
 }

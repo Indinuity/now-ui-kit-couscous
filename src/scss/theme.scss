@@ -82,5 +82,14 @@
 // custom styles
 img {
     background-color: lighten($brand-primary, 15%);
-    padding: 0.5rem;
+    padding: 0.1rem;
 }
+
+@include media-breakpoint-up(md) {
+  p {
+    &.img-wrap {
+      margin: 3rem 5rem;
+    }
+  }
+}
+
