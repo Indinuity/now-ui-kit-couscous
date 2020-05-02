@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Indinuity/now-ui-kit-couscous#readme",
   "devDependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^3.9.0",
