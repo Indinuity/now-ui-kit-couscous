@@ -39,67 +39,6 @@ var Paths = {
   ]
 };
 
-gulp.task('default', ['css-min', 'js-min', 'fonts'])
-
-gulp.task('watch', function () {
-  gulp.watch(Paths.SCSS_TOOLKIT_SOURCES, ['css-min']);
-  gulp.watch(Paths.JS,   ['js-min']);
-});
-
-gulp.task('docs', ['server'], function () {
-  gulp.src(__filename)
-    .pipe(open({uri: 'http://localhost:9001/docs/'}))
-});
-
-gulp.task('server', function () {
-  connect.server({
-    root: 'docs',
-    port: 9001,
-    livereload: true
-  })
-});
-
-gulp.task('css', function () {
-  var cssStream = gulp.src(Paths.CSS)
-    .pipe(sourcemaps.init())
-    .pipe(autoprefixer())   
-    .pipe(concat("css-files.css"));
-    
-  var scssStream = gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(concat("scss-files.css"));
-    
-  return merge(cssStream, scssStream)
-  	.pipe(concat(Settings.TOOLKIT+".css"))
-    .pipe(sourcemaps.write(Paths.HERE))
-    .pipe(gulp.dest(Paths.DIST));
-});
-
-gulp.task('css-min', ['css'], function () {
-  var cssStream = gulp.src(Paths.CSS)
-    .pipe(sourcemaps.init())
-    .pipe(autoprefixer())   
-    .pipe(concat("css-files.css"));
-    
-  var scssStream = gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(concat("scss-files.css"));
-    
-  return merge(cssStream, scssStream)
-  	.pipe(concat(Settings.TOOLKIT+".css"))
-  	.pipe(rename({
-		suffix: '.min'
-    }))
-    .pipe(minifyCSS())
-    .pipe(sourcemaps.write(Paths.HERE))
-    .pipe(gulp.dest(Paths.DIST))
-    .pipe(gulp.dest(Paths.WEB_CSS));
-});
-
 gulp.task('js', function () {
   return gulp.src(Paths.JS.concat(Paths.JS_APP))
     .pipe(concat(Settings.TOOLKIT+".js"))
@@ -116,7 +55,7 @@ gulp.task('js-dev', function () {
     .pipe(gulp.dest(Paths.WEB_JS))
 });
 
-gulp.task('js-min', ['js-dev', 'js'], function () {
+gulp.task('js-min', gulp.series(['js-dev', 'js'], function () {
   return gulp.src(Paths.DIST_TOOLKIT_JS)
     .pipe(uglify())
     .pipe(rename({
@@ -124,10 +63,61 @@ gulp.task('js-min', ['js-dev', 'js'], function () {
     }))
     .pipe(gulp.dest(Paths.DIST))
     .pipe(gulp.dest(Paths.WEB_JS))
+}));
+
+gulp.task('css', function () {
+  var scssStream = gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(concat("scss-files.css"));
+    
+  return merge(scssStream)
+    .pipe(concat(Settings.TOOLKIT+".css"))
+    .pipe(sourcemaps.write(Paths.HERE))
+    .pipe(gulp.dest(Paths.DIST));
 });
 
-// Fonts
+gulp.task('css-min', gulp.series(['css'], function () {
+  var scssStream = gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(concat("scss-files.css"));
+    
+  return merge(scssStream)
+    .pipe(concat(Settings.TOOLKIT+".css"))
+    .pipe(rename({
+        suffix: '.min'
+    }))
+    .pipe(minifyCSS())
+    .pipe(sourcemaps.write(Paths.HERE))
+    .pipe(gulp.dest(Paths.DIST))
+    .pipe(gulp.dest(Paths.WEB_CSS));
+}));
+
+//Fonts
 gulp.task('fonts', function() {
   return gulp.src(Paths.FONT_SOURCES)
     .pipe(gulp.dest(Paths.WEB_FONTS));
 });
+
+gulp.task('server', function () {
+  connect.server({
+    root: 'docs',
+    port: 9001,
+    livereload: true
+  })
+});
+
+gulp.task('default', gulp.parallel(['css-min', 'js-min', 'fonts']));
+
+gulp.task('watch', function () {
+  gulp.watch(Paths.SCSS_TOOLKIT_SOURCES, ['css-min']);
+  gulp.watch(Paths.JS,   ['js-min']);
+});
+
+gulp.task('docs', gulp.series(['server'], function () {
+  gulp.src(__filename)
+    .pipe(open({uri: 'http://localhost:9001/docs/'}))
+}));
